@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0d1b2a;
+  background: #f7f9fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { min-height: 100%; margin: 0; }
+body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button, input, select, textarea { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+.safe-bottom { padding-bottom: calc(env(safe-area-inset-bottom) + 88px); }
+.phone-frame {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 85% 4%, rgba(41, 194, 183, 0.10), transparent 30%),
+    radial-gradient(circle at 8% 18%, rgba(14, 163, 143, 0.08), transparent 32%),
+    #f7f9fb;
+}
+
+.card {
+  @apply rounded-3xl bg-white shadow-card border border-white/80;
+}
+
+.soft-card {
+  @apply rounded-3xl bg-zip-mint/70 border border-white shadow-card;
+}
+
+.primary-button {
+  @apply w-full rounded-2xl bg-zip-teal px-5 py-4 font-extrabold text-white shadow-card transition active:scale-[0.98] disabled:opacity-50;
+}
+
+.secondary-button {
+  @apply w-full rounded-2xl border border-zip-teal/25 bg-white px-5 py-4 font-bold text-zip-teal shadow-card transition active:scale-[0.98];
+}
+
+.danger-button {
+  @apply w-full rounded-2xl border border-red-200 bg-red-50 px-5 py-4 font-bold text-red-600 transition active:scale-[0.98];
+}
+
+.input {
+  @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-zip-navy outline-none focus:border-zip-teal focus:ring-4 focus:ring-zip-teal/10;
+}
+
+.segment-button {
+  @apply rounded-2xl px-4 py-3 text-sm font-bold transition;
+}
+
+.range {
+  accent-color: #0ea38f;
+}
+
+@keyframes gentle-pop {
+  from { transform: translateY(6px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-gentle-pop { animation: gentle-pop 220ms ease-out both; }
